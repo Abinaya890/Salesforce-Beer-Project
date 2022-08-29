@@ -49,19 +49,7 @@
                  var resultsToast = $A.get("e.force:showToast"); 
                  resultsToast.setParams({ "title": "Order Placed", "message": "Your Order has been successfully placed.", "type" : "success" });
                   resultsToast.fire();
-              	  var pageReference = component.find("navService");
-                  var pageReferenceNav = {    
-          		  "type": "standard__component",
-           		  "attributes": {
-                  "componentName": "c__OrderDetail"    
-            },    
-           		  state: {
-                  c__OrderId : saveResult.recordId
-                 
-            }
-        };
-        pageReference.navigate(pageReferenceNav);
-                  
+                  helper.updateBeerQty(component, event,quantity,saveResult.recordId);                 
              }
              else if (saveResult.state === "INCOMPLETE") 
                 {
