@@ -1,0 +1,4 @@
+<aura:component implements="force:appHostable" >
+	<c:Lipsticksearch></c:Lipsticksearch>
+
+</aura:component>

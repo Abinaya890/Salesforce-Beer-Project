@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <lightning:overlaylibrary aura:id="ab"/>
+     <lightning:button label="Create" title="Neutral action" onclick="{! c.handleClick }"/>
+</aura:component>

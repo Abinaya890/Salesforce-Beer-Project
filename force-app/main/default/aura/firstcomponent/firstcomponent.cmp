@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+	<h1> salesforce </h1>
+    <h2> salesforce </h2>
+    <h3> salesforce </h3>
+    <h4> salesforce </h4>
+    <h5> salesforce </h5>
+    <p class= "Sales" > Salesforce, Inc. is an American cloud-based software company headquartered in San Francisco, California. It provides customer relationship management software and applications focused on sales, customer service, marketing automation, analytics, and application development. </p>
+</aura:component>

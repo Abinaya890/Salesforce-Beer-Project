@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable" >
+	<aura:attribute name = "Message" type="string" default="Abc lipstick"> </aura:attribute> 
+    <div>
+        {!V.Message}
+    </div>
+</aura:component>

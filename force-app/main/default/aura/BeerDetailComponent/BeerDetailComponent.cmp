@@ -1,0 +1,20 @@
+<aura:component >
+    <lightning:navigation aura:id="navService"/>
+	<aura:attribute name="recordid" type="string"></aura:attribute>
+  <!--{!v.recordid} --> 
+   <div class="slds-p-around_large">
+<lightning:recordForm 
+                              recordId="{!v.recordid}" 
+                              objectApiName="Beer__c"
+                              layoutType="Full" 
+                              columns="2"
+                              mode="readonly" />
+   
+       <center>
+        
+            <lightning:button variant="brand" label="Order now" title="Brand action" onclick="{! c.handleClick }" />
+           
+           </center>
+       </div>
+    
+</aura:component>

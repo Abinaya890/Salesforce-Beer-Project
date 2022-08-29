@@ -1,0 +1,14 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"  access="global" >
+
+   
+    
+ <aura:attribute name="contactList" type="Object" /> 
+    <h1>Contact View Component</h1>
+    <aura:handler name="CreateContacts" event="c:ContactCreationEvent" action="{!c.doHandleEvent}" />
+
+    
+    	<c:Contactcomponent></c:Contactcomponent>
+ <c:ReviewContact  contactList = "{!v.contactList}"/>
+    
+    
+</aura:component>

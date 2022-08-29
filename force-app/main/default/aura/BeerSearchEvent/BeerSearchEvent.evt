@@ -1,0 +1,6 @@
+<aura:event type="Component" description="Event template" >
+<aura:attribute name ="Beerevent" type="string">
+    </aura:attribute>
+
+
+</aura:event>

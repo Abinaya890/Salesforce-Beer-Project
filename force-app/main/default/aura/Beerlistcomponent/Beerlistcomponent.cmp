@@ -1,0 +1,43 @@
+<aura:component >
+    <lightning:overlaylibrary aura:id="ab"/>
+	<aura:attribute name="listitems" type="object">
+        
+    </aura:attribute>
+    <aura:attribute name="beerrecordid" type="string"></aura:attribute>
+  <!--  {!v.beerrecordid} -->
+     <div  class="slds-grid slds-wrap" style="background-image : url(https://garden.spoonflower.com/c/11570959/p/f/m/v7tOXM8qKBe_QQ4hCpvVGh1A8Y5i4wyzbG3eGcfp4XtvzMg0kLvePTHcVQ/Beer%20in%20turquoise_Small%20scale.jpg);">
+        <!-- {!v.listitems} -->
+      <!--  {!v.recordid} -->
+        <aura:iteration items="{!v.listitems}" var="item">
+            <div class="slds-col slds-size_1-of-4 slds-p-around_small">
+                <lightning:card  title="{!item.Name}" footer="{!item.Brewery_Name__c}"
+                                iconName="custom:custom7" >
+                    <p class="slds-p-horizontal_small">
+ 
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col slds-size_1-of-3">   
+                                <img src="{!item.Image__c }" style =" height: 100px; width: 100px;"/>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                
+                                Name       :  {!item.Name} <br/>
+                                Id         :  {!item.Id} <br/> 
+                                Alcohol %  :  {!item.Alcohol__c}<br/> 
+                                Tags       :  {!item.Tags__c}<br/> 
+                                Price      :  {!item.Price__c }
+                                <br></br>
+                                <br></br>
+                               <!-- <aura:set attribute="actions"> -->
+                   <lightning:button  name="{!item.Id}" variant="brand" label="View Detail" title="Brand action" onclick="{! c.handleClick }" />
+                           <!--</aura:set> -->
+                            </div>
+                        </div>
+                 
+                      </p> 
+                </lightning:card>
+            </div>
+        </aura:iteration>
+         
+    </div>
+    <!--<c:BeerDetailComponent recordid="{!v.beerrecordid}" ></c:BeerDetailComponent> -->
+</aura:component>

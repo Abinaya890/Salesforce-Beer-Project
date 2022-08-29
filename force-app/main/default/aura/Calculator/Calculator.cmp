@@ -1,0 +1,17 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name ="input1" type="integer" access="public"></aura:attribute >
+    <aura:attribute name="input2" type="integer" access="public"></aura:attribute>
+    <aura:attribute name="answer" type="integer" access="public"></aura:attribute>
+    
+    
+    
+    <lightning:input type="integer" name="num1" label="enter a number" value="{!v.input1}" />
+    <lightning:input type="integer" name="num2" label="enter a number" value="{!v.input2}"/>
+    <lightning:input type="integer" name="num3" label="answer" value="{!v.answer}"/>
+    <br></br>
+    <lightning:button variant="brand-outline" label="add"  onclick="{! c.addClick }" />
+    <lightning:button variant="brand-outline" label="sub"  onclick="{! c.subClick }" />
+    <lightning:button variant="brand-outline" label="multi"  onclick="{! c.multiClick }" />
+    <lightning:button variant="brand-outline" label="divi"  onclick="{! c.divClick }" />
+        
+</aura:component>

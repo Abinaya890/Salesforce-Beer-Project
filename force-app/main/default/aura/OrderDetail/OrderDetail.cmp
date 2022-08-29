@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,lightning:isUrlAddressable" access="global" >
+    <aura:attribute name="Orderid" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInithandler}" />
+       <h1 style="font-size: xxx-large; text-align: center;
+                                              font-family: fantasy;background-color:#F4F49D ;"> Complete Order Detail </h1>
+ 
+  <!--  Orderid= {!v.Orderid} -->
+  &nbsp;
+    
+    <div style="background-color:#BBEFF5;">
+    <lightning:recordForm 
+                              recordId="{!v.Orderid}" 
+                              objectApiName="Beer_Order__c"
+                              layoutType="Full" 
+                              columns="2"
+                              mode="readonly" />
+    </div>
+</aura:component>

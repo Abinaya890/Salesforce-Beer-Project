@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable" >
+  <div style="    font-size: xx-large;
+    font-style: italic;
+    font-family: initial;
+    background-color: currentColor;
+    text-align: center;">
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Lipstick"
+            type="search"
+        />
+    </div>
+    
+	
+</aura:component>

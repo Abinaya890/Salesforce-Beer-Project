@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable" controller="BeerSearchClass">
+    <aura:handler name="init" value ="{!this}" action = "{!c.dohandle}"/>
+    <aura:handler name="BeerEvent" event="c:BeersearchEvents" action="{!c.dohandle}" />
+    <aura:attribute name="recordList" type="Object"/>
+    
+     
+    <c:BeerHeader Heading="BEER WORLD " Message="Buy 1 Get 1 Free" />
+	<c:Beersearch></c:Beersearch>
+     <c:Beerlistcomponent listitems ="{!v.recordList}" > </c:Beerlistcomponent>
+</aura:component>

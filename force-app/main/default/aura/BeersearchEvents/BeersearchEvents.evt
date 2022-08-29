@@ -1,0 +1,6 @@
+<aura:event type="Component" description="Event template" >
+
+    <aura:attribute name="SearchText" type="String" > 
+        
+    </aura:attribute>
+</aura:event>
