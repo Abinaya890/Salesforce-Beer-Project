@@ -1,5 +1,6 @@
 <aura:component >
     <aura:attribute name="recordList" type="Object"/>
+    <lightning:navigation aura:id="navService"/>
                                                           
     <lightning:layOut>
         <lightning:layOutitem>
