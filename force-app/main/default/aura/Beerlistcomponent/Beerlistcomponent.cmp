@@ -4,20 +4,24 @@
         
     </aura:attribute>
     <aura:attribute name="beerrecordid" type="string"></aura:attribute>
+    <aura:registerEvent name="Cartinfo" type="c:CartEvent"/>
   <!--  {!v.beerrecordid} -->
      <div  class="slds-grid slds-wrap" style="background-image : url(https://garden.spoonflower.com/c/11570959/p/f/m/v7tOXM8qKBe_QQ4hCpvVGh1A8Y5i4wyzbG3eGcfp4XtvzMg0kLvePTHcVQ/Beer%20in%20turquoise_Small%20scale.jpg);">
         <!-- {!v.listitems} -->
       <!--  {!v.recordid} -->
-        <aura:iteration items="{!v.listitems}" var="item">
+        <aura:iteration items="{!v.listitems}" var="item" indexVar = "index">
             <div class="slds-col slds-size_1-of-4 slds-p-around_small">
                 <lightning:card  title="{!item.Name}" footer="{!item.Brewery_Name__c}"
                                 iconName="custom:custom7" >
+                             
+                               
                     <p class="slds-p-horizontal_small">
  
                         <div class="slds-grid slds-gutters">
                             <div class="slds-col slds-size_1-of-3">   
                                 <img src="{!item.Image__c }" style =" height: 100px; width: 100px;"/>
                             </div>
+                           
                             <div class="slds-col slds-size_2-of-3">
                                 
                                 Name       :  {!item.Name} <br/>
@@ -28,8 +32,17 @@
                                 <br></br>
                                 <br></br>
                                <!-- <aura:set attribute="actions"> -->
-                   <lightning:button  name="{!item.Id}" variant="brand" label="View Detail" title="Brand action" onclick="{! c.handleClick }" />
-                           <!--</aura:set> -->
+                  
+                   
+                    <lightning:button name="{!item.Id}" label="Add to Cart" 
+                                      value= "{!index}"
+                                      variant="brand-outline" onclick="{!c.AddToCart}"/>
+               
+                    <lightning:button name="{!item.Id}" label ="View Details" variant ="brand-outline"
+                                      onclick ="{!c.Redirect}"
+                                      />
+                
+                   <!--</aura:set> -->
                             </div>
                         </div>
                  

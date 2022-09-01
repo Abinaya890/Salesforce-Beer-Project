@@ -1,5 +1,5 @@
 ({
-	handleClick : function(component, event, helper) {
+	Redirect : function(component, event, helper) {
 		var eventrecord = event.getSource();
         var beerid = eventrecord.get("v.name");
      //   alert(beerid);
@@ -31,6 +31,22 @@
             }
         }
     );
+    },
+    AddToCart : function(component, event, helper){
+        alert("Test")
+      
+        var eventSource = event.getSource();
+        var index = eventSource.get('v.value');
+        console.log(index)
+        var selectedBeerData = component.get('v.listitems')[index];
+        console.log("Selected Beer Id = ",selectedBeerData.Id)
+        console.log("Selected Beer Name = ",selectedBeerData.Name)
+        console.log("Selected Beer Price = ",selectedBeerData.Price__c)
+        var appEvent = $A.get("e.c:CartEvent");
+        appEvent.setParams({
+            beerRecord : selectedBeerData
+                            });
+        appEvent.fire();
     }
     
 })
