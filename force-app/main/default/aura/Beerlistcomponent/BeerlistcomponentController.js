@@ -33,7 +33,7 @@
     );
     },
     AddToCart : function(component, event, helper){
-        alert("Test")
+     //   alert("Test")
       
         var eventSource = event.getSource();
         var index = eventSource.get('v.value');

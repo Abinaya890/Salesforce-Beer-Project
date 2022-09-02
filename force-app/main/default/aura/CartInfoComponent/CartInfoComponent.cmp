@@ -1,9 +1,11 @@
-<aura:component >
-    <aura:attribute name="recordList" type="Object"/>
+<aura:component  >
+    <aura:handler event="c:CartEvent" action="{!c.cart}"/>
     <aura:attribute name="cartList" type="Object" />
     <aura:attribute name="beerNameList" type="String[]" />
+  
     <aura:handler name="change" value="{!v.cartList}" action="{!c.AddingProduct}"/>
-    <aura:handler event="c:CartEvent" action="{!c.cart}"/>
+  
+  
     <lightning:navigation aura:id="navService"/>
                                                           
     <lightning:layOut>

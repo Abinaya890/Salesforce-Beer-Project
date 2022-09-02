@@ -33,30 +33,19 @@
             var resultsToast = $A.get("e.force:showToast"); 
             resultsToast.setParams({ "title": "Added to Cart", "message":params.Name + " has been successfully added to cart.", "type" : "success" });
             resultsToast.fire();
-            var names = [];
-        for(var i=0; i<component.get('v.cartList').length;  i++)
-        {
-            names.push(component.get('v.cartList')[i].Id);
-            console.log(component.get('v.cartList')[i].Id);
-        }
-        console.log(names);
-        component.set('v.beerNameList', names);
-        
+    
 
     }
 },
 AddingProduct : function(component, event, helper) 
     {
-          alert("AddingProduct")
         var names = [];
         for(var i=0; i<component.get('v.cartList').length;  i++)
         {
             names.push(component.get('v.cartList')[i].Id);
             console.log(component.get('v.cartList')[i].Id);
         }
-        console.log(names);
+        alert(names);
         component.set('v.beerNameList', names);
-        
-
     }
 })
