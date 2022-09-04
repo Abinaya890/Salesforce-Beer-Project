@@ -4,8 +4,9 @@
     <aura:attribute name = "Message" type = "string" access = "public" />
    
    <div class="slds-page-header " style ="
-                                          font-size: xxx-large; text-align: center;background-color: #77c7c9;
-                                              font-family: fantasy;">
+                                          font-size: xxx-large; text-align: center;background-color: #0b090a;
+                                          color:#f1faee;
+                                              font-family: math;">
         <div class="slds-page-header__row">
             <div class="slds-page-header__col-title">
                 <div class="slds-media">

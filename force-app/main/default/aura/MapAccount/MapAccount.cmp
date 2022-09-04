@@ -16,4 +16,4 @@
         selectedMarkerValue="{!v.selectedMarkerValue}"
         onmarkerselect="{!c.handleMarkerSelect}" />
 
-</aura:component>	
+</aura:component>

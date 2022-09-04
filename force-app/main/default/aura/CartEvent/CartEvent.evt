@@ -1,5 +1,5 @@
 <aura:event type="APPLICATION" description="Event template">
 
- <aura:attribute name="beerRecord" type="Object" />
+ <aura:attribute name="CartRecord" type="Object" />
 
 </aura:event>

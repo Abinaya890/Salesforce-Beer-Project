@@ -1,48 +1,49 @@
 <aura:component >
     <lightning:overlaylibrary aura:id="ab"/>
-	<aura:attribute name="listitems" type="object">
+    <aura:attribute name="listitems" type="object">
         
     </aura:attribute>
     <aura:attribute name="beerrecordid" type="string"></aura:attribute>
     <aura:registerEvent name="Cartinfo" type="c:CartEvent"/>
-  <!--  {!v.beerrecordid} -->
-  <div  class="slds-grid slds-wrap" style="background-color: #0e66e1; ">
-    <aura:iteration items="{!v.listitems}" var="item" indexVar = "index">
-        <div class="slds-col slds-size_1-of-4 slds-p-around_small">
-            <lightning:card  title="{!item.Name}" footer="{!item.Brewery_Name__c}"
-                            iconName="custom:custom7" >
-                <p class="slds-p-horizontal_small">
+    <!--  {!v.beerrecordid} -->
+   
+    <div  class="slds-grid slds-wrap" style="background-color: #003d5b; ">
+        <aura:iteration items="{!v.listitems}" var="item" indexVar = "index" >
+            <div class="slds-col slds-size_1-of-4 slds-p-around_small"  >
+                <lightning:card  title="{!item.Name}" 
+                                footer="{!item.Brewery_Name__c}"
+                                iconName="custom:custom7">
+                    <p class="slds-p-horizontal_small"   >
+                        
+                        <div class="slds-grid slds-gutters" >
+                            <div class="slds-col slds-size_1-of-3">   
+                                <img src="{!item.Image__c }" style =" height: 100px; width: 100px;"/>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3" >
+                                Name       :  {!item.Name} <br/>
+                                Id         :  {!item.Id} <br/> 
+                                Alcohol %  :  {!item.Alcohol__c}<br/> 
+                                Tags       :  {!item.Tags__c}<br/> 
+                                Price      :  {!item.Price__c }
+                                
+                            </div>
+                        </div>
+                    </p>
+                    <aura:set attribute="actions">
+                        <lightning:button name="{!item.Id}" label="View Details" 
+                                          value="View Details"
+                                          variant="brand" onclick="{!c.Redirect}"
+                                          />
+                    </aura:set>
                     
-                    <div class="slds-grid slds-gutters">
-                        <div class="slds-col slds-size_1-of-3">   
-                            <img src="{!item.Image__c }" style =" height: 100px; width: 100px;"/>
-                        </div>
-                        <div class="slds-col slds-size_2-of-3">
-                            Name       :  {!item.Name} <br/>
-                            Id         :  {!item.Id} <br/> 
-                            Alcohol %  :  {!item.Alcohol__c}<br/> 
-                            Tags       :  {!item.Tags__c}<br/> 
-                            Price      :  {!item.Price__c }
-                            
-                        </div>
-                    </div>
-                </p>
-                <aura:set attribute="actions">
-                    <lightning:button name="{!item.Id}" label="View Details" 
-                                      value="View Details"
-                                      variant="brand" onclick="{!c.Redirect}"/>
-                </aura:set>
-                
-                <aura:set attribute="footer">
-                    <lightning:button name="{!item.Id}" label="Add to Cart" 
-                                      value= "{!index}"
-                                      variant="brand-outline" onclick="{!c.AddToCart}"/>
-                </aura:set>
-            </lightning:card>
-        </div>
-    </aura:iteration>
-</div>
+                    <aura:set attribute="footer">
+                        <lightning:button name="{!item.Id}" label="Add to Cart" 
+                                          value= "{!index}"
+                                          variant="brand-outline" onclick="{!c.AddToCart}"/>
+                    </aura:set>
+                </lightning:card>
+            </div>
+        </aura:iteration>
+    </div>
     <!--<c:BeerDetailComponent recordid="{!v.beerrecordid}" ></c:BeerDetailComponent> -->
 </aura:component>
-
-

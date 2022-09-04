@@ -1,11 +1,13 @@
 <aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable">
     <lightning:navigation aura:id="navService"/>
      <h1 style="font-size: xxx-large; text-align: center;
-                                              font-family: fantasy;"> Place Your Order </h1>
+                                              font-family: fangsong;
+                 background-color: #004643;
+                color:#faf4d3"> Place Your Order </h1>
     <aura:attribute name="Beerid" type="String" />
     <aura:attribute name="beerName" type="String" />
   
-    
+ 
  <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <!-- USE LDS to get the new template of Beer Order Record -->
     <aura:attribute name="newRecordObject" type="Object"/>
@@ -33,7 +35,7 @@
                       mode="EDIT" />
         
     <!-- Create Beer Record Form -->
-    <div class="slds-p-around_small">
+   	<div class="slds-p-around_medium"  style =" background-color: #f4f1de;">
         <div class="slds-grid slds-wrap">
             <div class="slds-col slds-size_1-of-2 slds-p-around_small">
                 <lightning:input type="number" required="" aura:id="bOrder" name="input2" label="Quantity to Order" 

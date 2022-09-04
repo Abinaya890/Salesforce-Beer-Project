@@ -44,7 +44,7 @@
         console.log("Selected Beer Price = ",selectedBeerData.Price__c)
         var appEvent = $A.get("e.c:CartEvent");
         appEvent.setParams({
-            beerRecord : selectedBeerData
+            CartRecord : selectedBeerData
                             });
         appEvent.fire();
     }

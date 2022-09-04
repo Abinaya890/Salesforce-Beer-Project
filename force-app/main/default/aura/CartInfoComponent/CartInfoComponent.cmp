@@ -2,18 +2,21 @@
     <aura:handler event="c:CartEvent" action="{!c.cart}"/>
     <aura:attribute name="cartList" type="Object" />
     <aura:attribute name="beerNameList" type="String[]" />
-  
-    <aura:handler name="change" value="{!v.cartList}" action="{!c.AddingProduct}"/>
-  
-  
+    
+    
     <lightning:navigation aura:id="navService"/>
-                                                          
+    
     <lightning:layOut>
         <lightning:layOutitem>
             <a href="JavaScript:void(0);" onclick="{!c.goToCart}"  >
                 <lightning:icon iconName="standard:webcart" size="large"/>
             </a>
             <span style="font-size: 2.1rem;"> {!v.cartList.length}</span>
+            
         </lightning:layOutitem>
+        
     </lightning:layOut>
+    <aura:iteration items="{!v.cartList}" var="item" indexVar="index" >
+       {!item.Name} ---- {!item.Price__c}<br/>
+    </aura:iteration>
 </aura:component>
