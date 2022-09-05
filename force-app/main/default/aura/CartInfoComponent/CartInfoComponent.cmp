@@ -16,7 +16,5 @@
         </lightning:layOutitem>
         
     </lightning:layOut>
-    <aura:iteration items="{!v.cartList}" var="item" indexVar="index" >
-       {!item.Name} ---- {!item.Price__c}<br/>
-    </aura:iteration>
+   
 </aura:component>
