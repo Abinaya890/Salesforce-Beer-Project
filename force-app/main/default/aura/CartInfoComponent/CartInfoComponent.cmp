@@ -1,4 +1,4 @@
-<aura:component  >
+<aura:component Controller="CartDetailAuraService" >
     <aura:handler event="c:CartEvent" action="{!c.cart}"/>
     <aura:attribute name="cartList" type="Object" />
     <aura:attribute name="beerNameList" type="String[]" />
