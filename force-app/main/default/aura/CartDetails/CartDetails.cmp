@@ -2,6 +2,7 @@
     
     <aura:attribute name="cartId" type="String" />
     <aura:attribute name="cartItemList" type="Object" />
+    <lightning:navigation aura:id="navService"/>
    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
     <div  class="slds-p-around_medium"> 
@@ -60,9 +61,22 @@
                         
                         <lightning:layoutItem padding="around-small" size="4">
                             <div class="page-section page-right">
-                                <h2>Right Sidebar</h2>
+                               
                                 
-                                
+                                <lightning:buttonGroup>
+                                        
+                                        <lightning:button label="Continue Shopping"
+                                                          onclick="{!c.homePage}"/>
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        
+                                        <lightning:button label="Proceed Checkout"
+                                                          variant="brand"
+                                                          onclick="{!c.doCheckout}"/>
+                                        
+                                    </lightning:buttonGroup>
                                 
                             </div>
                         </lightning:layoutItem>

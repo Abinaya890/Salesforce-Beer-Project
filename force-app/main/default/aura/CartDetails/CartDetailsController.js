@@ -61,12 +61,13 @@
     },
     homePage : function(component, event, helper) 
 {
+   // alert("type")
     var pageReference = component.find("navService");
-        
+    
         var pageReferenceNav = {    
             "type": "standard__navItemPage",
             "attributes": {
-                "apiName": "Beer_World"    
+                "apiName": "Beer_Explorer"    
             }
         };
         pageReference.navigate(pageReferenceNav);
