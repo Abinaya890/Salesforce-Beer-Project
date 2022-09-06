@@ -48,7 +48,7 @@
               console.log("cart ID - ", response.getReturnValue())
             if(state === 'SUCCESS' || state === 'DRAFT'){
                 
-                var pageReference = component.find("navigation");
+                var pageReference = component.find("navService");
                 var pageReferenceNav = {    
                     "type": "standard__component",
                     "attributes": {
