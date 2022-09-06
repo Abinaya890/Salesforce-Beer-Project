@@ -17,6 +17,7 @@
                         <h1> Cart Detail Page</h1>
                     </div>
                     
+                    
                 </lightning:layoutItem>
                 <lightning:layoutItem padding="around-small" size="12">
                     <lightning:layout>
@@ -37,6 +38,20 @@
                                    
                              
                                     </aura:iteration>
+                                    <lightning:buttonGroup>
+                                        
+                                        <lightning:button label="Continue Shopping"
+                                                          onclick="{!c.homePage}"/>
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        &nbsp;
+                                        
+                                        <lightning:button label="Proceed Checkout"
+                                                          variant="brand"
+                                                          onclick="{!c.doCheckout}"/>
+                                        
+                                    </lightning:buttonGroup>
                               </aura:if>
                                 
                               

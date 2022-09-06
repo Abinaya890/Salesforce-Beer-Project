@@ -58,5 +58,18 @@
             $A.enqueueAction(action); 
         } 
         
-    }
+    },
+    homePage : function(component, event, helper) 
+{
+    var pageReference = component.find("navService");
+        
+        var pageReferenceNav = {    
+            "type": "standard__navItemPage",
+            "attributes": {
+                "apiName": "Beer_World"    
+            }
+        };
+        pageReference.navigate(pageReferenceNav);
+}
+
 })
