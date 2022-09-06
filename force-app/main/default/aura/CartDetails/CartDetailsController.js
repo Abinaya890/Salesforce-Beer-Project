@@ -7,7 +7,8 @@
         if(state.cartId__c){
             console.log(' cartId ' ,state.cartId__c);
             component.set('v.cartId',state.cartId__c );
-            var action = component.get('c.getCartItems');
+           alert(state.cartId__c);
+         var action = component.get('c.getCartItems');
             action.setParams({
                 'CartId' : state.cartId__c
             });
@@ -52,7 +53,7 @@
                                                
                                            }
                                });
-            $A.enqueueAction(action);
+            $A.enqueueAction(action); 
         } 
         
     }
