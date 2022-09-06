@@ -4,10 +4,11 @@
         var pageReference = component.get('v.pageReference');
         
         var state = pageReference.state;
+        
         if(state.cartId__c){
             console.log(' cartId ' ,state.cartId__c);
             component.set('v.cartId',state.cartId__c );
-           alert(state.cartId__c);
+       //    alert(state.cartId__c);
          var action = component.get('c.getCartItems');
             action.setParams({
                 'CartId' : state.cartId__c
@@ -15,7 +16,8 @@
             action.setCallback(this, function(response)
                                {
                                    var stateResponse = response.getState();
-                                   $A.get('e.force:refreshView').fire(); 
+                                 
+                                  // alert(stateResponse)
                                    if(stateResponse === 'SUCCESS' || stateResponse === 'DRAFT')
                                    {
                                        var ResultData =response.getReturnValue();

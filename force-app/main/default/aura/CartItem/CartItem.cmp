@@ -10,8 +10,8 @@
             </div>
             
             <div class="slds-col slds-size_1-of-4">
-             <!-- <lightning:formattedNumber label="Price" value="{!v.cartItem.Total_Amount__c}" 
-                                           style="currency" currencyCode = "USD"/>-->  
+           <lightning:formattedNumber label="Price" value="{!v.cartItem.Total_Amount__c}" 
+                                           style="currency" currencyCode = "USD"/>
             </div>
             <div class="slds-col slds-size_1-of-4">
                 <ui:inputNumber label="" value="{!v.cartItem.Item_Quantity__c}" 
