@@ -25,14 +25,21 @@
                                        console.log("Return length - ", ResultData.length)
                                        
                                        var items = [];
-                                       for(var key in ResultData)
-                                       {
+                                       var subTotal;
+                                       for(var key in ResultData){
+               
                                            items.push(ResultData[key]);
+               
+                                           if(subTotal)
+                                               subTotal = subTotal + ResultData[key].Total_Amount__c
+                                           else
+                                               subTotal = ResultData[key].Total_Amount__c
                                        }
-                                       
-                                       component.set('v.cartItemList', items);
-                                       console.log( items);
-                                      
+                                        component.set('v.subTotal', subTotal);
+               
+                                        
+                                        component.set('v.cartItemList', items);
+                                        console.log( "items" , items);
                                        
                                    }
                                    else if(stateResponse === 'INCOMPLETE')
@@ -71,6 +78,51 @@
             }
         };
         pageReference.navigate(pageReferenceNav);
-}
+},
+
+    applyCoupon :  function(component, event, helper) 
+    {
+        component.set('v.isCouponAplied', true);
+    
+    },
+    
+    doApplyCoupon : function(component, event, helper) 
+    {
+        var CouponNo = component.find('CouponNo').get('v.value');
+        var cartId = component.get('v.cartId');
+       // alert(CouponNo);
+      //  alert(cartId);
+        if(CouponNo){
+            var action = component.get('c.checkCoupon');
+            action.setParams({
+                Name : CouponNo,
+                CartId : cartId
+            });
+            action.setCallback(this, function(response){
+                var state = response.getState();
+               // alert(state);
+                if(state === 'SUCCESS' || state ==='DRAFT'){
+                    var resultData = response.getReturnValue();
+                    if(resultData){
+                        component.set('v.discountAmount', resultData);
+
+                        component.set('v.errorDiscount',null);
+                        component.set('v.isCouponSuccess', true);
+                        var discount = resultData;
+                        var subtotal = component.get('v.subTotal') - discount;
+                        component.set('v.subTotal',subtotal);
+                    }else{
+                        component.set('v.errorDiscount','Coupon is not Valid OR Expired.');
+                        component.set('v.discountAmount',null);
+                         component.set('v.isCouponSuccess', false);
+                    }
+                }
+            });
+            $A.enqueueAction(action);
+        }else{
+            alert('Please Enter your Coupon No');
+        }
+    }
+
 
 })
