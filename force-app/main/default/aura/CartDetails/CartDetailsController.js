@@ -122,7 +122,10 @@
         }else{
             alert('Please Enter your Coupon No');
         }
+    },
+
+    doCheckout : function(component, event, helper) {
+     component.set('v.isCheckout', true);
+
     }
-
-
 })

@@ -7,7 +7,23 @@
     <aura:attribute name="errorDiscount" type="String" />
     <aura:attribute name="isCouponAplied" type="Boolean" />
     <aura:attribute name="isCouponSuccess" type="Boolean" />
-    <lightning:navigation aura:id="navService"/>
+
+    <aura:attribute name="isCheckout" type="Boolean" />
+    <aura:attribute name="addressBook" type="Address_Book__c" 
+
+    default="{
+                                                                          sobjectType:'Address_Book__c',
+                                                                          Street__c : '',
+                                                                          City__c:'',
+                                                                          Postal_Code__c:'',
+                                                                          State__c : '',
+                                                                          Country__c : ''
+                                                                          }"
+   /> 
+    
+      <aura:attribute name="record" type="Object" />
+        <aura:attribute name="recordError" type="String" />
+        <lightning:navigation aura:id="navService"/>
    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
     
     <div  class="slds-p-around_medium"> 
@@ -25,9 +41,10 @@
                     
                     
                 </lightning:layoutItem>
+
                 <lightning:layoutItem padding="around-small" size="12">
                     <lightning:layout>
-                        
+                        <aura:if isTrue="{!!v.isCheckout}" >
                         <lightning:layoutItem padding="around-small" size="8">
                             <div class="page-section page-main">
                                     
@@ -63,13 +80,55 @@
                               
                             </div>
                         </lightning:layoutItem>
+                    </aura:if>
+                    <aura:if isTrue="{!v.isCheckout}" >  
+                        <h1>Select Billing/Shipping Address</h1>
+                     
+                        &nbsp;
+                       
+
+                        <lightning:input aura:id="address"
+                                                             name="Street" 
+                                                             label="Street"
+                                                             required="true"
+                      value="{!v.addressBook.Street__c}"   placeholder="type here..."/>
+                      &nbsp;
+                       
+                      <lightning:input aura:id="address"
+                      name="City" 
+                      label="City"
+                      required="true"
+                      value="{!v.addressBook.City__c}"   placeholder="type here..."/>
+                      &nbsp;
+                       
+                      <lightning:input aura:id="address"
+                      name="State" 
+                      label="State"
+                      required="true"
+                      value="{!v.addressBook.State__c}"   placeholder="type here..."/>
+                      &nbsp;
+                       
+                      <lightning:input aura:id="address"
+                      name="Postal code" 
+                      label="Postal code"
+                      required="true"
+                      value="{!v.addressBook.Postal_Code__c}"   placeholder="type here..."/>
+                      &nbsp;
+                       
+
+                           </aura:if>
+            
+               
                         
+
+
                         <lightning:layoutItem padding="around-small" size="4">
+                        
                             <div class="page-section page-right">
                                <b>Subtotal ({!v.cartItemList.length} item)  &nbsp; :</b>
                                &nbsp;
                                        
-                                        
+                                  
                                <lightning:formattedNumber label="Price" value="{!v.subTotal}" 
                                currencyCode="USD"/>
                       </div>
@@ -102,7 +161,7 @@
                                     </p>
                                 </aura:if>
                             </aura:if>
-                               
+                            <aura:if isTrue="{!!v.isCheckout}" > 
                                 <lightning:buttonGroup>
                                    
                                         <lightning:button label="Continue Shopping"
@@ -115,11 +174,12 @@
                                         <lightning:button label="Proceed Checkout"
                                                           variant="brand"
                                                           onclick="{!c.doCheckout}"/>
-                                        
+                                                      
                                     </lightning:buttonGroup>
-                                
-                        
+                              
+                                    </aura:if>
                         </lightning:layoutItem>
+                    
                     </lightning:layout>
                 </lightning:layoutItem>
                 <lightning:layoutItem flexibility="auto" padding="around-small" size="12">
