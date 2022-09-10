@@ -1,5 +1,7 @@
 <aura:component implements="force:appHostable" >
-   
+    <aura:attribute name = "Heading" type = "string" access = "public" />
+    
+    <aura:attribute name = "Message" type = "string" access = "public" />
    
    <div class="slds-page-header " style ="
                                           font-size: xxx-large; text-align: center;background-color: #0b090a;
