@@ -4,8 +4,10 @@
     <aura:attribute name = "Message" type = "string" access = "public" />
    
    <div class="slds-page-header " style ="
-                                          font-size: xxx-large; text-align: center;background-color: #0b090a;
-                                          color:#f1faee;
+                                          font-size: xxx-large; 
+                                          text-align: center;
+     background-image: url(https://6elrmjmsbs335jwbeybarrry-wpengine.netdna-ssl.com/wp-content/uploads/2022/08/beer-animated-aweber.gif);                      
+                                           color:#f1faee;
                                               font-family: math;">
         <div class="slds-page-header__row">
             <div class="slds-page-header__col-title">

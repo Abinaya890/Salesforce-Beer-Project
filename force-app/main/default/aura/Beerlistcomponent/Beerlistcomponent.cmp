@@ -7,7 +7,13 @@
     <aura:registerEvent name="Cartinfo" type="c:CartEvent"/>
     <!--  {!v.beerrecordid} -->
    
-    <div  class="slds-grid slds-wrap" style="background-color: #003d5b; ">
+    <div  class="slds-grid slds-wrap" style="background-image: url(
+                                             
+                                     https://mir-s3-cdn-cf.behance.net/project_modules/fs/0001c7116413251.6061c0d7d4b4d.gif
+                                             ); ">
+
+
+
         <aura:iteration items="{!v.listitems}" var="item" indexVar = "index" >
             <div class="slds-col slds-size_1-of-4 slds-p-around_small"  >
                 <lightning:card  title="{!item.Name}" 

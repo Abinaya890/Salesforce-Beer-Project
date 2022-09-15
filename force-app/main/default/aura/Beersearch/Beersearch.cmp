@@ -1,7 +1,7 @@
 <aura:component implements="flexipage:availableForAllPageTypes" access="global" >
    <aura:registerEvent name="BeerEvent" type="c:BeersearchEvents" />
  
-	<div class="slds-p-around_medium"  style =" background-color: #eaf2d7;">
+	<div class="slds-p-around_medium"  style =" background-color:#042135;">
         <lightning:input
                          name="inline-search-input"
                          label="Beer Search"
