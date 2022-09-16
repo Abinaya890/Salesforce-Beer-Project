@@ -1,5 +1,6 @@
 <aura:component >
-    
+    <lightning:overlaylibrary aura:id="ab"/>
+    <aura:attribute name="listitems" type="object">
         
     </aura:attribute>
     <aura:attribute name="beerrecordid" type="string"></aura:attribute>
